@@ -1,0 +1,25 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+#header {
+  background-color:#dfd;
+  border:1px solid black;
+  border-radius:5px;
+  padding:10px;
+}
+#container {
+  padding: 50px;
+  width:300px;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.form-field {
+  width:150px;
+  padding:7px;
+  border-radius: 5px;
+  margin-left:20px;
+}

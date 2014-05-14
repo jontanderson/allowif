@@ -1,0 +1,4 @@
+examples
+.git
+npm-debug.log
+.DS_Store

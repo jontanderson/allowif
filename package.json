@@ -1,0 +1,26 @@
+{
+  "name": "allowIf",
+  "description": "allowIf is Express.js middleware that handles role- and permission-based authorization.",
+  "keywords": ["express", "authorization", "authorize", "middleware", "role", "activity" ],
+  "version": "0.0.1",
+  "homepage": "http://github.com/jontanderson/allowif",
+  "author": "Jon T. Anderson",
+  "repository": {
+    "url": "git://github.com/jontanderson/allowif",
+    "type": "git"
+  },
+  "bugs": {
+    "url": "http://github.com/jontanderson/allowyif/issues"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "express": "~4.0.0",
+    "debug": "latest"
+  },
+  "devDependencies": {
+    "mocha": "latest",
+    "should": "latest",
+    "supertest": "latest"
+  },
+  "license": "MIT"
+}

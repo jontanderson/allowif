@@ -1,0 +1,12 @@
+<% layout("layout.ejs") %>
+    <h3>Welcome to <%= title %></h3>
+<% if (curuser) { %>
+  <p>Click on the link below to view the list of users</p>
+  <a href='/users'>Users</a>
+<% } else { %>
+  <p>Click on the following link to login as a user,
+  use the models/userdata.js to find an accepted username
+  and password.</p>
+  <a href='/login'>Login</a>
+<% } %>
+

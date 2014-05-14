@@ -1,0 +1,15 @@
+<% layout("../layout.ejs") %>
+<form id='edituserform' action='/users/edit' method='post'>
+  <input type='hidden' name='id' value='<%= user.id %>'></input>
+  <label>First Name:</label><br/>
+  <input type='text' class='form-field' name='firstname' value='<%= user.firstname %>'></input><br/>
+  Last Name:<br/>
+  <input type='text' class='form-field' name='lastname' value='<%= user.lastname %>'></input><br/>
+  Username:<br/>
+  <input type='text' class='form-field' name='username' value='<%= user.username %>'></input><br/>
+  Password:<br/>
+  <input type='text' class='form-field' name='password' value='<%= user.password %>'></input><br/>
+  <br/>
+  <button>Update</button>
+  or go back to the <a href='/users/<%= user.id %>'>view</a>.
+</form>
