@@ -1,18 +1,18 @@
 var request = require('supertest')
-  , express = require('express')
-  , allowIf = require('../')
-  , app
-  , Lisa = {
+var express = require('express')
+var allowIf = require('../')
+var Lisa = {
       name : "Lisa",
       can : [ "view own account", "view other users"
-              , "edit other users", "delete user account" ],
+              , "edit other users" ],
       isa : [ "worker", "manager" ]
     }
-  , Bob = {
+var Bob = {
       name : "Bob",
       can : [ "view own account" ],
       isa : [ "worker" ]
     }
+var app
 
 var LisaCan = function() {
   return function(req,res,next) {
@@ -273,107 +273,4 @@ describe("allowIf", function() {
     })    
   })
 
-
-    // it("allows access if user cannot 'delete user accounts'", function(done) {
-    //   app.use(allowIf.canAuthority(Lisa.can))
-    //   app.get('/users'
-    //     , allowIf.cannot('delete user accounts').verify()
-    //     , function(req, res) {
-    //         res.send(200,'access granted')
-    //   })
-    //   request(app)
-    //   .get('/users')
-    //   .expect(200)
-    //   .end(function(err,res) {
-    //     if (err) {
-    //       done(err)
-    //     } else {
-    //       done()
-    //     }
-    //   })
-    // })
-  // describe("GET /users with 'isa' and 'can' authorization", function(done) {
-  //   beforeEach(function(done) {
-  //     app = express()
-  //     done()
-  //   })
-  //   it("allows access if 'manager' and can 'view other users'",function(done){
-  //     app.use(allowIf.isaAuthority(Lisa.isa))
-  //     app.use(allowIf.canAuthority(Lisa.can))
-  //     app.get('/users'
-  //       , allowIf.isa('manager').and.can('view other users').verify()
-  //       , function(req, res) {
-  //           res.send(200,'access granted')
-  //     })
-  //     request(app)
-  //     .get('/users')
-  //     .expect(200)
-  //     .end(function(err,res) {
-  //       if (err) {
-  //         done(err)
-  //       } else {
-  //         done()
-  //       }
-  //     })
-  //   })
-  //   it("allows access if 'manager' or can 'view other users'", function(done) {
-  //     app.use(allowIf.isaAuthority(Lisa.isa))
-  //     app.use(allowIf.canAuthority(Lisa.can))
-  //     app.get('/users'
-  //       , allowIf.isa('manager').or.can('view other users').verify()
-  //       , function(req, res) {
-  //           res.send(200,'access granted')
-  //     })
-  //     request(app)
-  //     .get('/users')
-  //     .expect(200)
-  //     .end(function(err,res) {
-  //       if (err) {
-  //         done(err)
-  //       } else {
-  //         done()
-  //       }
-  //     })
-  //   })
-  //   it("does not allow access if not 'manager'"
-  //     + ", but can 'view other users'", function(done) {
-  //     app.use(allowIf.isaAuthority(Bob.isa))
-  //     app.use(allowIf.canAuthority(Bob.can))
-  //     app.get('/users'
-  //       , allowIf.isa('manager').and.can('view other users').verify()
-  //       , function(req, res) {
-  //         res.send(200,'access granted')
-  //     })
-  //     request(app)
-  //     .get('/users')
-  //     .expect(401)
-  //     .end(function(err,res) {
-  //       if (err) {
-  //         done(err)
-  //       } else {
-  //         done()
-  //       }
-  //     })
-  //   })    
-  //   it("does not allow access if 'worker'"
-  //     + ", but cannot 'view other users'", function(done) {
-  //     app.use(allowIf.isaAuthority(Bob.isa))
-  //     app.use(allowIf.canAuthority(Bob.can))
-  //     app.get('/users'
-  //       , allowIf.isa('worker').and.can('view other users').verify()
-  //       , function(req, res) {
-  //         res.send(200,'access granted')
-  //     })
-  //     request(app)
-  //     .get('/users')
-  //     .expect(401)
-  //     .end(function(err,res) {
-  //       if (err) {
-  //         done(err)
-  //       } else {
-  //         done()
-  //       }
-  //     })
-  //   })    
-  // })
 })
