@@ -69,7 +69,7 @@ app.get("/users/edit/:userid"
 
 ```
 
-See the examples and test folders for more usage tips [here](http://github.com/jontanderson/allowyif "GitHub Repository for AllowIf").
+See the examples and test folders for more usage tips [here](http://github.com/jontanderson/allowif "GitHub Repository for AllowIf").
 
 ## Contributors
 
